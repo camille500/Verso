@@ -151,7 +151,7 @@ export const content: VersoContent = {
     },
     leaving: {
       title: 'Het verlaat je atelier als een verhaal.',
-      lines: ['En arriveert overal daarna…', 'als een ding.'],
+      lines: ['Overal daarna is het…', 'nog maar een ding.'],
     },
     anonymous: {
       eyebrow: 'Het probleem',
