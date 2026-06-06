@@ -1,0 +1,4 @@
+# esbuild needs its install script to set up the platform binary.
+# pnpm 11 reads this allowlist here (no longer from package.json).
+allowBuilds:
+  esbuild: true
