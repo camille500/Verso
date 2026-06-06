@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#FCFBF7" />
+
+    <title>Verso — Voor de maker</title>
+    <meta
+      name="description"
+      content="Verso. Elke print een gedocumenteerd object. Met een ziel."
+    />
+    <meta property="og:title" content="Verso" />
+    <meta
+      property="og:description"
+      content="Elke print een gedocumenteerd object. Met een ziel."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="color-scheme" content="light" />
+
+    <!-- Type: Fraunces (display serif) + General Sans (grotesque).
+         NOTE: served via CDN for development. Self-host as woff2 in /public/fonts
+         before the live pitch for full offline robustness. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
