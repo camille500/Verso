@@ -17,11 +17,13 @@ export function useLenis() {
       return
     }
 
+    // smoothWheel is OFF: the deck navigation controller (useDeckNavigation)
+    // owns wheel/touch and drives one section per gesture via lenis.scrollTo.
+    // Lenis stays purely as the eased scroll animator + ScrollTrigger sync.
     const lenis = new Lenis({
       duration: 1.1,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      wheelMultiplier: 0.9,
+      smoothWheel: false,
     })
     lenisRef.current = lenis
 

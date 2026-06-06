@@ -26,7 +26,7 @@ function reset() {
         <RevealText as="h2" :text="c.title" class="h-display text-[clamp(2.1rem,5.6vw,4.2rem)]" />
         <p class="body-lg mt-7 max-w-md">{{ c.lines?.[0] }}</p>
         <div class="mt-9 flex items-center gap-4">
-          <button v-if="!activated" class="btn-primary" @click="tap">Tik om te openen</button>
+          <button v-if="!activated" class="btn-primary cue-pulse" @click="tap">Tik om te openen</button>
           <button v-else class="btn-ghost" @click="reset">↻ Opnieuw</button>
         </div>
       </div>

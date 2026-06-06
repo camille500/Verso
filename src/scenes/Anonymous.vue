@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import { content } from '@/content/content'
 import Scene from '@/primitives/Scene.vue'
 import RevealText from '@/primitives/RevealText.vue'
@@ -9,9 +9,11 @@ const hero = content.hero
 const count = 24
 const flipped = reactive<Record<number, boolean>>({})
 const labels = ['kopie', '?', 'onbekend', 'kopie', '?', 'onbekend']
+const touched = ref(false)
 
 function toggle(i: number) {
   flipped[i] = !flipped[i]
+  touched.value = true
 }
 </script>
 
@@ -27,6 +29,7 @@ function toggle(i: number) {
         <p class="mt-9 font-display text-[clamp(1.1rem,2.4vw,1.5rem)] italic text-mist">
           {{ c.note }}
         </p>
+        <p v-if="!touched" class="cue-tag mt-8">Tik op een kopie</p>
       </div>
 
       <div class="copies-mask">

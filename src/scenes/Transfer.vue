@@ -20,7 +20,7 @@ const transferred = ref(false)
           <span class="block text-ink">{{ c.lines?.[1] }}</span>
         </p>
         <div class="mt-9 flex items-center gap-4">
-          <button v-if="!transferred" class="btn-primary" @click="transferred = true">
+          <button v-if="!transferred" class="btn-primary cue-pulse" @click="transferred = true">
             Geef door
           </button>
           <button v-else class="btn-ghost" @click="transferred = false">↻ Opnieuw</button>

@@ -96,7 +96,7 @@ onUnmounted(() => clearTimeout(timer))
         </p>
 
         <div class="controls">
-          <button v-if="phase === 'idle'" class="btn-ghost" @click="forge">
+          <button v-if="phase === 'idle'" class="btn-ghost cue-pulse" @click="forge">
             Probeer te vervalsen
           </button>
           <button v-else class="btn-ghost" @click="reset">↻ Opnieuw</button>

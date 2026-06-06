@@ -7,7 +7,7 @@ withDefaults(defineProps<{ width?: number }>(), { width: 320 })
   <div class="phone" :style="{ width: width + 'px' }">
     <div class="frame">
       <div class="speaker"></div>
-      <div class="screen no-scrollbar">
+      <div class="screen no-scrollbar" data-deck-ignore>
         <div class="glare"></div>
         <slot />
       </div>

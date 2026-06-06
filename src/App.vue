@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue'
 import { useLenis } from '@/composables/useLenis'
+import { useDeckNavigation } from '@/composables/useDeckNavigation'
 import Presentation from '@/presentation/Presentation.vue'
 
 useLenis()
+useDeckNavigation()
 
 // Press F to present full-screen.
 function onKey(e: KeyboardEvent) {

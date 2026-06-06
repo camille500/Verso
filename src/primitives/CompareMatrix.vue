@@ -25,6 +25,7 @@ const uniqueKeys = computed<CapabilityKey[]>(() =>
 const root = ref<HTMLElement | null>(null)
 const highlighted = ref(false)
 const selected = ref(0)
+const touched = ref(false)
 
 useGsapScene(root, (el) => {
   // NB: .cm-row uses display:contents (no box) — animate the actual grid cells.
@@ -58,7 +59,7 @@ function cell(c: Competitor, k: CapabilityKey) {
 
 <template>
   <div ref="root" class="cm-wrap">
-    <div class="cm-scroll no-scrollbar">
+    <div class="cm-scroll no-scrollbar" data-deck-ignore>
       <div class="cm-grid" :style="{ gridTemplateColumns: `minmax(118px,1.3fr) repeat(${keys.length}, minmax(82px,1fr))` }">
         <!-- header -->
         <div class="cm-row contents">
@@ -82,7 +83,7 @@ function cell(c: Competitor, k: CapabilityKey) {
           <button
             class="cm-name"
             :class="{ 'cm-verso': c.isVerso, 'cm-active': selected === ci }"
-            @click="selected = ci"
+            @click="selected = ci; touched = true"
           >
             {{ c.name }}
             <span v-if="c.isVerso" class="cm-badge">jij</span>
@@ -114,6 +115,8 @@ function cell(c: Competitor, k: CapabilityKey) {
         </div>
       </div>
     </div>
+
+    <p v-if="!touched" class="cue-tag cm-hint">Tik op een merk voor de eerlijke nuance</p>
 
     <!-- honest note -->
     <Transition name="note" mode="out-in">
@@ -221,8 +224,11 @@ function cell(c: Competitor, k: CapabilityKey) {
   background: var(--color-hairline-strong);
   border-radius: 2px;
 }
-.cm-note {
+.cm-hint {
   margin-top: 18px;
+}
+.cm-note {
+  margin-top: 14px;
   font-size: 14px;
   line-height: 1.6;
   color: var(--color-graphite);
